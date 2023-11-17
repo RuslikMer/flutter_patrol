@@ -4,7 +4,7 @@ description: A new Flutter project.
 # Prevent accidental publishing to pub.dev.
 publish_to: 'none'
 
-version: 2.1.5+1039
+version: 2
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
@@ -35,7 +35,6 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_native_splash: ^2.3.2
-  #flutter_smartlook: ^4.1.8-flutter3.13.0
   flutter_smartlook:
     git:
       url: https://github.com/Kuodster/flutter_smartlook.git
@@ -69,13 +68,7 @@ dependencies:
   url_launcher: ^6.1.12
   visibility_detector: ^0.4.0+2
   webview_flutter: ^4.2.2
-  datastore_reader:
-    path: ./custom_packages/datastore_reader
   flutter_blurhash: ^0.7.0
-#  klaviyo_flutter:
-#    git:
-#      url: https://github.com/Kuodster/klaviyo_flutter.git
-#      ref: main
   restart_app: ^1.2.1
 
 dev_dependencies:
@@ -87,7 +80,7 @@ dev_dependencies:
     sdk: flutter
   flutter_tests_companion:
     git:
-      url: git@bitbucket.org:bambinifashion/flutter-tests-companion.git
+      url: flutter-tests-companion.git
       ref: main
 
   flutter_lints: ^2.0.2
@@ -104,38 +97,10 @@ flutter:
   # Enable generation of localized Strings from arb files.
   #generate: true
 
-  fonts:
-    - family: BambiniIcons
-      fonts:
-        - asset: assets/fonts/BambiniIcons.ttf
-    - family: Apercu
-      fonts:
-        - asset: assets/fonts/apercu-regular-pro.ttf
-        - asset: assets/fonts/apercu-bold-pro.ttf
-          weight: 700
-        - asset: assets/fonts/apercu-light-pro.ttf
-          weight: 300
-        - asset: assets/fonts/apercu-medium-pro.ttf
-          weight: 500
-    - family: Didot
-      fonts:
-        - asset: assets/fonts/didot-regular.ttf
-
-  assets:
-    - .env.staging
-    - .env.production
-    # Add assets from the images directory to the application.
-    - assets/images/
-    - assets/images/payments/
-    - assets/country_flags/
-    - assets/lottie/
-flutter_intl:
-  enabled: true
-
 patrol:
   app_name: bambinifashion
   flavor: staging
   android:
-    package_name: com.bambinifashion.bambinifashion
+    package_name: bambinifashion
 #  ios:
 #    bundle_id: pl.leancode.AwesomeApp
