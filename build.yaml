@@ -1,0 +1,14 @@
+targets:
+  $default:
+    builders:
+      auto_route_generator:auto_route_generator:
+        generate_for:
+          - lib/modules/*/pages/*_page.dart
+      auto_route_generator:auto_router_generator:
+        generate_for:
+          - lib/modules/core/router/app_router.dart
+      source_gen:combining_builder:
+        options:
+          build_extensions:
+            '^lib/modules/common/models/{{}}.dart': 'lib/modules/common/models/generated/{{}}.g.dart'
+            '^lib/modules/common/responses/{{}}.dart': 'lib/modules/common/responses/generated/{{}}.g.dart'

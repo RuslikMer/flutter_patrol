@@ -1,0 +1,38 @@
+
+pipelines:
+  custom:
+    android-tests:
+      - variables:
+          - name: Android_Device
+            default: "Samsung Galaxy S9 Plus-9.0"
+            allowed-values:
+              - "Samsung Galaxy S9 Plus-9.0"
+              - "Samsung Galaxy S21-12.0"
+              - "Samsung Galaxy A52-11.0"
+              - "Samsung Galaxy S23 Ultra-13.0"
+              - "Samsung Galaxy S22 Plus-12.0"
+              - "Samsung Galaxy Note 20-10.0"
+              - "Samsung Galaxy S8-7.0"
+              - "Google Pixel 7 Pro-13.0"
+              - "Xiaomi Redmi Note 11-11.0"
+              - "Xiaomi Redmi Note 8-9.0"
+      - step:
+          name: test
+          runs-on:
+            - self.hosted
+          size: 2x
+          script:
+            - flutter pub get
+            - make routes-build
+            - aws s3 cp s3://bf-android-app/bambinifashion.keystore android/
+            - aws ssm get-parameter --name "android-flapster-env" | jq -r '.Parameter .Value' > .env.staging
+            - aws ssm get-parameter --name "android-flapster-env-prod" | jq -r '.Parameter .Value' > .env.production
+            - aws ssm get-parameter --name "android-flapster-firebase" | jq -r '.Parameter .Value' > android/app/google-services.json
+            - sed -i "s~device_name~$Android_Device~" ./run_tests.dart
+            - cd android
+            - gradle wrapper
+            - ls
+            - ./gradlew app:assembleStagingDebugAndroidTest
+            - cd ..
+            - dart run upload_app_suite_browserstack.dart
+            - ./runTests.sh

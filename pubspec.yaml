@@ -1,0 +1,141 @@
+name: bambinifashion
+description: A new Flutter project.
+
+# Prevent accidental publishing to pub.dev.
+publish_to: 'none'
+
+version: 2.1.5+1039
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  app_tracking_transparency: ^2.0.4
+  auto_route: ^7.8.0
+  auto_size_text: ^3.0.0
+  azlistview: ^2.0.0
+  bloc: ^8.1.2
+  cached_network_image: ^3.2.3
+  collection: ^1.17.2
+  device_info_plus: ^9.0.3
+  dio: ^5.3.2
+  equatable: ^2.0.5
+  facebook_app_events: ^0.19.0
+  firebase_analytics: ^10.4.5
+  firebase_core: ^2.15.1
+  firebase_crashlytics: ^3.3.5
+  firebase_remote_config: ^4.2.5
+  flat: ^0.4.1
+  flutter:
+    sdk: flutter
+  flutter_animate: ^4.2.0+1
+  flutter_bloc: ^8.1.3
+  flutter_dialogs: ^3.0.0
+  flutter_dotenv: ^5.1.0
+  flutter_localizations:
+    sdk: flutter
+  flutter_native_splash: ^2.3.2
+  #flutter_smartlook: ^4.1.8-flutter3.13.0
+  flutter_smartlook:
+    git:
+      url: https://github.com/Kuodster/flutter_smartlook.git
+      ref: main
+  flutter_staggered_grid_view: ^0.7.0
+  flutter_stripe:
+    git:
+      url: https://github.com/Kuodster/flutter_stripe.git
+      path: packages/stripe
+      ref: main
+  flutter_widget_from_html_core: ^0.10.3
+  get_it: ^7.6.0
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  intl: any
+  json_annotation: ^4.8.1
+  logger: ^2.0.1
+  lottie: ^2.6.0
+  native_shared_preferences: ^2.0.7
+  onesignal_flutter: ^3.5.1
+  open_store: ^0.5.0
+  package_info_plus: ^4.1.0
+  photo_view: ^0.14.0
+  pretty_dio_logger: ^1.3.1
+  provider: ^6.0.5
+  share_plus: ^7.1.0
+  shared_preferences: ^2.2.1
+  shimmer: ^3.0.0
+  uni_links: ^0.5.1
+  uri: ^1.0.0
+  url_launcher: ^6.1.12
+  visibility_detector: ^0.4.0+2
+  webview_flutter: ^4.2.2
+  datastore_reader:
+    path: ./custom_packages/datastore_reader
+  flutter_blurhash: ^0.7.0
+#  klaviyo_flutter:
+#    git:
+#      url: https://github.com/Kuodster/klaviyo_flutter.git
+#      ref: main
+  restart_app: ^1.2.1
+
+dev_dependencies:
+  integration_test:
+    sdk: flutter
+  flutter_test:
+    sdk: flutter
+  flutter_driver:
+    sdk: flutter
+  flutter_tests_companion:
+    git:
+      url: git@bitbucket.org:bambinifashion/flutter-tests-companion.git
+      ref: main
+
+  flutter_lints: ^2.0.2
+  auto_route_generator: ^7.3.1
+  flutter_launcher_icons: ^0.13.1
+  build_runner: ^2.4.6
+  hive_generator: ^2.0.1
+  json_serializable: ^6.7.1
+  patrol: ^2.2.3
+
+flutter:
+  uses-material-design: true
+
+  # Enable generation of localized Strings from arb files.
+  #generate: true
+
+  fonts:
+    - family: BambiniIcons
+      fonts:
+        - asset: assets/fonts/BambiniIcons.ttf
+    - family: Apercu
+      fonts:
+        - asset: assets/fonts/apercu-regular-pro.ttf
+        - asset: assets/fonts/apercu-bold-pro.ttf
+          weight: 700
+        - asset: assets/fonts/apercu-light-pro.ttf
+          weight: 300
+        - asset: assets/fonts/apercu-medium-pro.ttf
+          weight: 500
+    - family: Didot
+      fonts:
+        - asset: assets/fonts/didot-regular.ttf
+
+  assets:
+    - .env.staging
+    - .env.production
+    # Add assets from the images directory to the application.
+    - assets/images/
+    - assets/images/payments/
+    - assets/country_flags/
+    - assets/lottie/
+flutter_intl:
+  enabled: true
+
+patrol:
+  app_name: bambinifashion
+  flavor: staging
+  android:
+    package_name: com.bambinifashion.bambinifashion
+#  ios:
+#    bundle_id: pl.leancode.AwesomeApp

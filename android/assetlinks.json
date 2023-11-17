@@ -1,0 +1,26 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.bambinifashion.staging",
+      "sha256_cert_fingerprints": [
+        "52:A0:6B:D6:75:7A:54:BC:5F:97:6B:4B:AD:4A:ED:D8:0C:99:B5:03:E0:CB:A0:0F:53:A2:BC:40:B6:0B:AE:B0"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.bambinifashion.production",
+      "sha256_cert_fingerprints": [
+        "8B:52:7B:79:B2:2F:7F:E1:06:DB:35:34:15:52:51:C1:E3:04:8A:C2:CC:7C:59:7E:3E:1E:B0:70:7F:6E:DD:29"
+      ]
+    }
+  }
+]
